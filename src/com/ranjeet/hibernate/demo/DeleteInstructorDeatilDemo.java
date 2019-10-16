@@ -21,11 +21,12 @@ public class DeleteInstructorDeatilDemo {
 		
 		try {
 			System.out.println("Retrieving Instructor object ...");
-			int id=3;
+			int id=2;
 			session.beginTransaction();
 			InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
 			System.out.println(instructorDetail);
 			System.out.println(instructorDetail.getInstructor());
+			instructorDetail.getInstructor().setInstructorDetail(null);
 			System.out.println("Deleting Instructor object ...");
 			session.delete(instructorDetail);
 			session.getTransaction().commit();
