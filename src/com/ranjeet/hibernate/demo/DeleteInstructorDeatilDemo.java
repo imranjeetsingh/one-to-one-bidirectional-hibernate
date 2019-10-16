@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.ranjeet.hibernate.entity.Instructor;
 import com.ranjeet.hibernate.entity.InstructorDetail;
 
-public class GetInstructorDeatilDemo {
+public class DeleteInstructorDeatilDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,6 +26,8 @@ public class GetInstructorDeatilDemo {
 			InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
 			System.out.println(instructorDetail);
 			System.out.println(instructorDetail.getInstructor());
+			System.out.println("Deleting Instructor object ...");
+			session.delete(instructorDetail);
 			session.getTransaction().commit();
 			
 			System.out.println("Done!!!!!!");
